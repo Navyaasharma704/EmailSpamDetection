@@ -156,7 +156,7 @@ npm start
 
 GitHub: https://github.com/Navyaasharma704
 
-LinkedIn: *(Add your LinkedIn profile link here.)*
+LinkedIn: www.linkedin.com/in/navyaa-sharma-37b668327
 
 ---
 
