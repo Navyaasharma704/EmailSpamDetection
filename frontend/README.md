@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# 📧 Email Spam Detection using Machine Learning
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that detects whether an email is **Spam** or **Not Spam** using a Machine Learning model.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Live Demo
 
-### `npm start`
+### 🌐 Frontend
+https://email-spam-detection-rust.vercel.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🔗 Backend API
+https://emailspamdetection-now6.onrender.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📌 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Detects Spam and Not Spam emails
+- User-friendly React interface
+- Machine Learning prediction using Flask API
+- Fast and responsive
+- Deployed online using Vercel and Render
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend
+- React.js
+- CSS
+- Axios
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
+- Python
+- Flask
+- Flask-CORS
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Machine Learning
+- Scikit-learn
+- Pandas
+- NumPy
 
 ### Deployment
+- Vercel (Frontend)
+- Render (Backend)
+- GitHub (Version Control)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📂 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+EmailSpamDetection/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── app.py
+│   ├── best_model.pkl
+│   ├── vectorizer.pkl
+│   └── requirements.txt
+│
+└── dataset/
+```
+
+---
+
+## ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/Navyaasharma704/EmailSpamDetection.git
+```
+
+### Go to the project folder
+
+```bash
+cd EmailSpamDetection
+```
+
+### Install frontend dependencies
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+### Install backend dependencies
+
+```bash
+cd ../backend
+pip install -r requirements.txt
+python app.py
+```
+
+---
+
+## 📖 How to Use
+
+1. Open the website.
+2. Paste an email into the text box.
+3. Click **Detect Spam**.
+4. View the prediction result.
+
+---
+
+## 🎯 Future Improvements
+
+- Gmail Integration
+- Real-time Email Detection
+- User Authentication
+- Spam Detection History
+- Improved Machine Learning Accuracy
+
+---
+
+## 👩‍💻 Developed By
+
+**Navyaa Sharma**
+
+B.Tech Information Technology Student
+
+Passionate about Data Science, Machine Learning, and Artificial Intelligence.
+
+GitHub:
+https://github.com/Navyaasharma704
