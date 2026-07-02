@@ -1,52 +1,94 @@
 # 📧 Email Spam Detection System
 
-## 📖 Overview
+A full-stack Machine Learning web application that classifies email messages as **Spam** or **Not Spam** using **Natural Language Processing (NLP)** and a trained **Scikit-learn** model.
 
-The Email Spam Detection System is a Machine Learning web application that predicts whether an email message is **Spam** or **Not Spam**.
-
-The user enters an email message into the application, and the trained Machine Learning model analyzes the text and displays the prediction instantly.
-
-This project demonstrates the complete Machine Learning workflow, from data preprocessing and model training to frontend-backend integration.
+The application combines a **React.js frontend**, **Flask backend**, and a Machine Learning model to provide fast and accurate spam detection.
 
 ---
 
-## 🚀 Features
+# 🚀 Live Demo
+
+### 🌐 Frontend (Vercel)
+
+**https://email-spam-detection-rust.vercel.app**
+
+### 🔗 Backend API (Render)
+
+**https://emailspamdetection-now6.onrender.com**
+
+---
+
+# ✨ Features
 
 - Detects Spam and Not Spam emails
-- User-friendly web interface
-- Fast predictions using Machine Learning
-- React-based frontend
-- Flask-based backend
-- Trained Machine Learning model
-- Clean and responsive UI
+- Machine Learning-based text classification
+- Natural Language Processing (NLP)
+- Fast and accurate predictions
+- Clean and responsive React interface
+- Flask REST API backend
+- Fully deployed using Vercel and Render
 
 ---
 
-## 🛠 Technologies Used
+# 🛠️ Tech Stack
 
-### Frontend
+## Frontend
+
 - React.js
 - HTML5
 - CSS3
 - JavaScript
 - Axios
 
-### Backend
+## Backend
+
 - Python
 - Flask
 - Flask-CORS
 
-### Machine Learning
+## Machine Learning
+
 - Scikit-learn
 - Pandas
 - NumPy
+- TF-IDF Vectorizer
 - Pickle
+
+## Deployment
+
+- Vercel (Frontend)
+- Render (Backend)
+- GitHub
 
 ---
 
-## 📂 Project Structure
+# ⚙️ How It Works
 
-```
+1. User enters an email message.
+2. React sends the email text to the Flask backend.
+3. The backend preprocesses the text using NLP techniques.
+4. TF-IDF Vectorizer converts the text into numerical features.
+5. The trained Machine Learning model predicts whether the email is Spam or Not Spam.
+6. The prediction is displayed instantly on the screen.
+
+---
+
+# 🧠 Machine Learning Workflow
+
+- Data Collection
+- Data Cleaning
+- Text Preprocessing
+- Feature Extraction (TF-IDF Vectorization)
+- Model Training
+- Model Evaluation
+- Model Saving
+- Prediction
+
+---
+
+# 📂 Project Structure
+
+```text
 EmailSpamDetection/
 │
 ├── backend/
@@ -69,43 +111,22 @@ EmailSpamDetection/
 │   ├── cleaned_spam.csv
 │   └── email_spam_dataset.csv
 │
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## ⚙️ How It Works
+# ⚙️ Installation
 
-1. User enters an email message.
-2. React sends the message to the Flask backend.
-3. Flask preprocesses the text.
-4. The trained Machine Learning model predicts whether the email is Spam or Not Spam.
-5. The prediction is displayed on the screen.
-
----
-
-## 📊 Machine Learning Workflow
-
-- Data Collection
-- Data Cleaning
-- Text Preprocessing
-- Feature Extraction (TF-IDF Vectorization)
-- Model Training
-- Model Evaluation
-- Model Saving
-- Prediction
-
----
-
-## 💻 Installation
-
-### Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Navyaasharma704/EmailSpamDetection.git
+cd EmailSpamDetection
 ```
 
-### Backend Setup
+## Backend Setup
 
 ```bash
 cd backend
@@ -113,7 +134,9 @@ pip install -r requirements.txt
 python app.py
 ```
 
-### Frontend Setup
+## Frontend Setup
+
+Open a new terminal.
 
 ```bash
 cd frontend
@@ -123,44 +146,66 @@ npm start
 
 ---
 
-## 📸 Screenshots
+# 💻 Live Application
 
-### Home Page
+Instead of running the project locally, you can directly use the deployed application.
 
-*(Add a screenshot here after deployment.)*
+### 🌐 Frontend
 
-### Spam Prediction
+https://email-spam-detection-rust.vercel.app
 
-*(Add a screenshot showing a Spam prediction.)*
+### 🔗 Backend API
 
-### Not Spam Prediction
-
-*(Add a screenshot showing a Not Spam prediction.)*
+https://emailspamdetection-now6.onrender.com
 
 ---
 
-## 🎯 Future Improvements
+# 📸 Screenshots
 
-- Gmail API integration for automatic email detection
-- Mobile application
-- User authentication
-- Real-time email monitoring
-- Multi-language spam detection
-- Deep Learning based spam classification
+## Home Page
+
+_Add your homepage screenshot here._
+
+## Spam Prediction
+
+_Add your Spam prediction screenshot here._
+
+## Not Spam Prediction
+
+_Add your Not Spam prediction screenshot here._
 
 ---
 
-## 👩‍💻 Author
+# 🚀 Future Improvements
+
+- Gmail API Integration
+- User Authentication
+- Spam Detection History
+- Multi-language Spam Detection
+- Deep Learning Model
+- Improved Prediction Accuracy
+
+---
+
+# 👩‍💻 Developer
 
 **Navyaa Sharma**
 
-GitHub: https://github.com/Navyaasharma704
+B.Tech Information Technology Student
 
-LinkedIn: www.linkedin.com/in/navyaa-sharma-37b668327
+Passionate about Data Science, Machine Learning, Artificial Intelligence, and Full-Stack Development.
+
+### GitHub
+
+https://github.com/Navyaasharma704
+
+### LinkedIn
+
+https://www.linkedin.com/in/navyaa-sharma-37b668327/
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
 If you found this project useful, please consider giving it a ⭐ on GitHub.
 
