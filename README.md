@@ -160,20 +160,19 @@ https://emailspamdetection-now6.onrender.com
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-## Home Page
+### 🏠 Home Page
 
-_Add your homepage screenshot here._
+![Home Page](screenshots/home.png)
 
-## Spam Prediction
+### 🚫 Spam Prediction
 
-_Add your Spam prediction screenshot here._
+![Spam Prediction](screenshots/spam_prediction.png)
 
-## Not Spam Prediction
+### ✅ Not Spam Prediction
 
-_Add your Not Spam prediction screenshot here._
-
+![Not Spam Prediction](screenshots/not_spam_prediction.png)
 ---
 
 # 🚀 Future Improvements
