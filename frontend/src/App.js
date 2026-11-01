@@ -1,6 +1,6 @@
 
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
 const API = "https://emailspamdetection-now6.onrender.com";
@@ -22,26 +22,34 @@ function App() {
     headers: { Authorization: `Bearer ${token}` }
   };
 
-  const loadDashboard = async () => {
+  // Load dashboard data
+  const loadDashboard = useCallback(async () => {
     try {
+      const headers = {
+        headers: { Authorization: `Bearer ${token}` }
+      };
+
       const [historyResponse, statsResponse] = await Promise.all([
-        axios.get(`${API}/history`, authHeaders),
-        axios.get(`${API}/stats`, authHeaders)
+        axios.get(`${API}/history`, headers),
+        axios.get(`${API}/stats`, headers)
       ]);
 
       setHistory(historyResponse.data);
       setStats(statsResponse.data);
     } catch (error) {
-      setMessage(error.response?.data?.error || "Unable to load dashboard.");
+      setMessage(
+        error.response?.data?.error || "Unable to load dashboard."
+      );
     }
-  };
+  }, [token]);
 
   useEffect(() => {
     if (token) {
       loadDashboard();
     }
-  }, [token]);
+  }, [token, loadDashboard]);
 
+  // Login and Register
   const handleAuth = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -50,8 +58,10 @@ function App() {
     try {
       if (authMode === "register") {
         await axios.post(`${API}/register`, form);
+
         setMessage("Account created! Please login.");
         setAuthMode("login");
+        setForm({ username: "", password: "" });
       } else {
         const response = await axios.post(`${API}/login`, form);
 
@@ -64,12 +74,15 @@ function App() {
         setMessage("");
       }
     } catch (error) {
-      setMessage(error.response?.data?.error || "Authentication failed.");
+      setMessage(
+        error.response?.data?.error || "Authentication failed."
+      );
     } finally {
       setLoading(false);
     }
   };
 
+  // Spam Detection
   const detectSpam = async () => {
     if (!email.trim()) {
       setMessage("Please enter an email message first.");
@@ -91,12 +104,15 @@ function App() {
       setEmail("");
       await loadDashboard();
     } catch (error) {
-      setMessage(error.response?.data?.error || "Prediction failed.");
+      setMessage(
+        error.response?.data?.error || "Prediction failed."
+      );
     } finally {
       setLoading(false);
     }
   };
 
+  // Logout
   const logout = async () => {
     try {
       await axios.post(`${API}/logout`, {}, authHeaders);
@@ -115,12 +131,15 @@ function App() {
     setMessage("You have logged out.");
   };
 
+  // Login / Register Screen
   if (!token) {
     return (
       <div className="auth-page">
         <div className="auth-card">
           <div className="brand-icon">✉</div>
+
           <h1>EmailGuard AI</h1>
+
           <p className="subtitle">
             Intelligent Email Spam Detection System
           </p>
@@ -143,6 +162,7 @@ function App() {
 
           <form onSubmit={handleAuth}>
             <label>Username</label>
+
             <input
               type="text"
               placeholder="Enter username"
@@ -154,6 +174,7 @@ function App() {
             />
 
             <label>Password</label>
+
             <input
               type="password"
               placeholder="Enter password (minimum 6 characters)"
@@ -162,6 +183,7 @@ function App() {
                 setForm({ ...form, password: e.target.value })
               }
               required
+              minLength={6}
             />
 
             <button
@@ -183,6 +205,7 @@ function App() {
     );
   }
 
+  // Main Dashboard
   return (
     <div className="dashboard">
       <header className="topbar">
@@ -193,6 +216,7 @@ function App() {
 
         <div className="user-area">
           <span>Welcome, {username}</span>
+
           <button className="logout-btn" onClick={logout}>
             Logout
           </button>
@@ -211,6 +235,7 @@ function App() {
 
         {message && <div className="message">{message}</div>}
 
+        {/* Statistics */}
         <section className="stats-grid">
           <div className="stat-card">
             <span>Total Analyzed</span>
@@ -228,8 +253,10 @@ function App() {
           </div>
         </section>
 
+        {/* Email Input */}
         <section className="panel detector-panel">
           <h2>Analyze an Email</h2>
+
           <p>
             Paste the email content below to check whether it is spam.
           </p>
@@ -250,6 +277,7 @@ function App() {
           </button>
         </section>
 
+        {/* Prediction Result */}
         {result && (
           <section className="panel result-panel">
             <h2>Prediction Result</h2>
@@ -292,6 +320,7 @@ function App() {
           </section>
         )}
 
+        {/* Charts */}
         <section className="charts-grid">
           <div className="panel">
             <h2>Your Prediction Statistics</h2>
@@ -322,6 +351,7 @@ function App() {
           </div>
         </section>
 
+        {/* Confusion Matrix */}
         <section className="panel">
           <h2>Confusion Matrix</h2>
 
@@ -336,6 +366,7 @@ function App() {
           )}
         </section>
 
+        {/* Prediction History */}
         <section className="panel">
           <h2>Prediction History</h2>
 
