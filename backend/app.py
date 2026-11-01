@@ -47,7 +47,13 @@ if not os.path.exists(MODEL_PATH):
 
 model = joblib.load(MODEL_PATH)
 
+if not os.path.exists(VECTOR_PATH):
+    raise FileNotFoundError("vectorizer.pkl not found!")
+
+vectorizer = joblib.load(VECTOR_PATH)
+
 print("Machine Learning model loaded successfully!")
+print("TF-IDF Vectorizer loaded successfully!")
 
 
 # --------------------------------------------------
@@ -378,10 +384,13 @@ def predict():
 
     try:
 
-        # Machine Learning prediction
-        prediction = model.predict([email])[0]
+        # Convert email text into TF-IDF numerical features
+        email_vector = vectorizer.transform([email])
 
-        probabilities = model.predict_proba([email])[0]
+        # Machine Learning prediction
+        prediction = model.predict(email_vector)[0]
+
+        probabilities = model.predict_proba(email_vector)[0]
 
         classes = list(model.classes_)
 
